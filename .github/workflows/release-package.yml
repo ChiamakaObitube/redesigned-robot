@@ -25,12 +25,18 @@ jobs:
       packages: write
       contents: read
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
         with:
           node-version: 16
-          registry-url: https://npm.pkg.github.com/
+          registry-url: "https://registry.npmjs.org"
+        # with:
+        #   node-version: 16
+        #   registry-url: https://npm.pkg.github.com/
       - run: npm ci
       - run: npm publish
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NPM_CONFIG_TOKEN: ${{secrets.GITHUB_TOKEN}}
