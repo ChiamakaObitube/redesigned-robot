@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/ChiamakaObitube/redesigned-robot/issues"
   },
-  "homepage": "https://github.com/ChiamakaObitube/redesigned-robot#readme"
+  "homepage": "https://github.com/ChiamakaObitube/redesigned-robot#readme",
+  "publishConfig": {
+    "@ChiamakaObitube:registry": "https://npm.pkg.github.com"
+  }
 }
