@@ -1,5 +1,5 @@
 {
-  "name": "redesigned-robot",
+  "name": "@ChiamakaObitube/redesigned-robot",
   "version": "1.0.0",
   "description": "Test GitHub Packages etc",
   "main": "index.js",
