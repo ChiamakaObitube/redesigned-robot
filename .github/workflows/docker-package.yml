@@ -4,7 +4,7 @@ on:
 
 
 env:
-  REGISTRY: ghcr.io
+  REGISTRY: ghcr.io/chiamakaobitube
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
