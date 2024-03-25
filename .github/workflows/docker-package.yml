@@ -39,5 +39,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: pr${{ github.event.number }}
+          tags: chiamakaobitube/redesigned-robot:pr12
           # labels: ${{ steps.meta.outputs.labels }}
