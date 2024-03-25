@@ -19,7 +19,7 @@ jobs:
         uses: castlabs/get-package-version-id-action@v2.0
         id: version
         with:
-          version: "pr*"
+          version: "pr.*"
       - name: Delete old cardiolib PR images
         uses: actions/delete-package-versions@v5
         if: ${{ steps.version.outputs.ids != '' }}
