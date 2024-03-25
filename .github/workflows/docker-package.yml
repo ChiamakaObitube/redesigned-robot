@@ -2,7 +2,11 @@ name: Publish package to GitHub Packages
 on:
   push:
 
-
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+  
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
