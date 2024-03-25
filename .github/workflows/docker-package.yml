@@ -41,6 +41,10 @@ jobs:
           push: true
           tags: |
             ghcr.io/chiamakaobitube/redesigned-robot:1.0.0
+            ghcr.io/chiamakaobitube/redesigned-robot:1.2.3
+            ghcr.io/chiamakaobitube/redesigned-robot:1.2.4
+            ghcr.io/chiamakaobitube/redesigned-robot:1.2.5
+            ghcr.io/chiamakaobitube/redesigned-robot:1.2.6
             ghcr.io/chiamakaobitube/redesigned-robot:pr-123
             ghcr.io/chiamakaobitube/redesigned-robot:pr-1234
           # labels: ${{ steps.meta.outputs.labels }}
