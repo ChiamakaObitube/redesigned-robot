@@ -15,16 +15,16 @@ jobs:
     name: delete packages
     runs-on: ubuntu-latest
     steps:
-      - name: Get package id
-        uses: castlabs/get-package-version-id-action@v2.0
-        id: version
-        with:
-          version: "*.1.0.0"
-      - name: Delete old cardiolib PR images
-        uses: actions/delete-package-versions@v5
-        if: ${{ steps.version.outputs.ids != '' }}
-        with:
-          package-version-ids: "${{ steps.versions.outputs.ids }}"
+      # - name: Get package id
+      #   uses: castlabs/get-package-version-id-action@v2.0
+      #   id: version
+      #   with:
+      #     version: "*.1.0.0"
+      # - name: Delete old cardiolib PR images
+      #   uses: actions/delete-package-versions@v5
+      #   if: ${{ steps.version.outputs.ids != '' }}
+      #   with:
+      #     package-version-ids: "${{ steps.versions.outputs.ids }}"
       - name: Delete old cardiolib PR images main
         uses: actions/delete-package-versions@v5
         with:
