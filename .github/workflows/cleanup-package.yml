@@ -25,10 +25,10 @@ jobs:
         if: ${{ steps.version.outputs.ids != '' }}
         with:
           package-version-ids: "${{ steps.versions.outputs.ids }}"
-      # - name: Delete old cardiolib PR images main
-      #   uses: actions/delete-package-versions@v5
-      #   with:
-      #     package-name: 'cardiolib'
-      #     package-type: 'container'
-      #     min-versions-to-keep: 3
-      #     ignore-versions: '^(2\.3.\.0)$', '^(2\.19.)$'
+      - name: Delete old cardiolib PR images main
+        uses: actions/delete-package-versions@v5
+        with:
+          package-name: 'redesigned-robot'
+          package-type: 'container'
+          num-old-versions-to-delete: 3
+          ignore-versions: '^(1\.0.\.0)$'
