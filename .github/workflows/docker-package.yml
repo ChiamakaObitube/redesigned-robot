@@ -39,5 +39,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: chiamakaobitube/redesigned-robot:pr12
+          tags: |
+            ghcr.io/chiamakaobitube/redesigned-robot:1.0.0
+            ghcr.io/chiamakaobitube/redesigned-robot:pr-123
+            ghcr.io/chiamakaobitube/redesigned-robot:pr-1234
           # labels: ${{ steps.meta.outputs.labels }}
