@@ -21,4 +21,4 @@ jobs:
           package-name: redesigned-robot
           bump-minor-pre-major: true
           bump-patch-for-minor-pre-major: true
-          token: ${{ secrets.PAT }}
+          token: ${{ secrets.PAT_TOKEN }}
