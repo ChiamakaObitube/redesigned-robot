@@ -25,10 +25,19 @@ jobs:
       #   if: ${{ steps.version.outputs.ids != '' }}
       #   with:
       #     package-version-ids: "${{ steps.versions.outputs.ids }}"
-      - name: Delete old images
-        uses: actions/delete-package-versions@v5
+      # - name: Delete old images
+      #   uses: actions/delete-package-versions@v5
+      #   with:
+      #     package-name: 'redesigned-robot'
+      #     package-type: 'container'
+      #     num-old-versions-to-delete: 2
+      #     ignore-versions: '^(1\.0.\.1)$'
+      - name: delete old packages
+        uses: smartsquaregmbh/delete-old-packages@v0.7.0
         with:
-          package-name: 'redesigned-robot'
-          package-type: 'container'
-          num-old-versions-to-delete: 2
-          ignore-versions: '^(1\.0.\.1)$'
+          organization: my-organization
+          type: container
+          dry-run: true
+          version-pattern: "^pr\\d+$"
+          names: |
+            redesigned-robot
