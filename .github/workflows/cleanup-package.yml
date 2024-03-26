@@ -31,4 +31,4 @@ jobs:
           package-name: 'redesigned-robot'
           package-type: 'container'
           num-old-versions-to-delete: 3
-          ignore-versions: '^(1\.0.\.0)$'
+          ignore-versions: '^(1\.0.\.1)$'
