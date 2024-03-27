@@ -30,7 +30,7 @@ jobs:
         with:
           package-name: 'redesigned-robot'
           package-type: 'container'
-          # num-old-versions-to-delete: 2
+          num-old-versions-to-delete: 3
           ignore-versions: '^(v2\.3)$'
       # - name: delete old packages
       #   uses: smartsquaregmbh/delete-old-packages@v0.7.0
