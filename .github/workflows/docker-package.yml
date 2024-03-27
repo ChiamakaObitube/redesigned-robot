@@ -44,5 +44,5 @@ jobs:
           push: true
           tags: |
             ${{ steps.meta.outputs.tags }}
-            ghcr.io/chiamakaobitube/redesigned-robot:v2.3
+            ghcr.io/chiamakaobitube/redesigned-robot:v2.4
           labels: ${{ steps.meta.outputs.labels }}
