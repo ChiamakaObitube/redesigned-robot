@@ -37,12 +37,12 @@ jobs:
       - name: try delete package
         uses: quartx-analytics/ghcr-cleaner@v1
         with:
-          owner-type: org # or user
+          owner-type: user #org # or user
           token: ${{ secrets.GITHUB_TOKEN }}
           repository_owner: ${{ github.repository_owner }}
           package-name: redesigned-robot
           delete-untagged: true
-          keep-at-most: 5
+          keep-at-most: 30
           filter-tags: v*
           skip-tags: v2.3
       # - name: Delete image
