@@ -35,11 +35,12 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: ${{ github.sha }}
+
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
           push: true
-          tags: ${{ github.ref }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: ${{ github.sha }}
