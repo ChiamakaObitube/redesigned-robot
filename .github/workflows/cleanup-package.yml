@@ -39,10 +39,10 @@ jobs:
         with:
           owner-type: user #org # or user
           token: ${{ secrets.PAT_TOKEN }}
-          repository-owner: ${{ github.repository_owner }}
+          repository-owner: chiamakaobitube
           package-name: redesigned-robot
           delete-untagged: true
-          keep-at-most: 3
+          # keep-at-most: 3
           filter-tags: v2.3
           dry-run: true
           # skip-tags: v2.3
