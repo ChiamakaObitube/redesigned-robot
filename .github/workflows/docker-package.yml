@@ -44,4 +44,5 @@ jobs:
           tags: |
             ${{ steps.meta.outputs.tags }}
             ghcr.io/chiamakaobitube/redesigned-robot:pr6025
+            ghcr.io/chiamakaobitube/redesigned-robot:pr6026
           labels: ${{ steps.meta.outputs.labels }}

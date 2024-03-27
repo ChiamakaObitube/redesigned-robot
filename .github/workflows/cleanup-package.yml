@@ -41,3 +41,5 @@ jobs:
           version-pattern: "^pr\\d+$"
           names: |
             redesigned-robot
+
+            map(select(.Address | test("^[0-9]")))
