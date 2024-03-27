@@ -39,10 +39,10 @@ jobs:
         with:
           owner-type: user #org # or user
           token: ${{ secrets.GITHUB_TOKEN }}
-          repository_owner: ${{ github.repository-owner }}
+          repository-owner: ${{ github.repository_owner }}
           package-name: redesigned-robot
           delete-untagged: true
-          keep-at-most: 30
+          keep-at-most: 3
           filter-tags: v*
           skip-tags: v2.3
       # - name: Delete image
