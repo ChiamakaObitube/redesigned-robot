@@ -34,7 +34,16 @@ jobs:
       #     # delete-only-untagged-versions: true
       #     # min-versions-to-keep: 1
       #     ignore-versions: '^(v2\\.3)'
-      - name: try delete package
+      - name: Delete all containers from repository without tags
+        uses: Chizkiyahu/delete-untagged-ghcr-action@v3
+        with:
+            token: ${{ secrets.PAT_TOKEN }}
+            repository_owner: ${{ github.repository_owner }}
+            repository: ${{ github.repository }}
+            untagged_only: true
+            owner_type: user # or user
+            except_untagged_multiplatform: true
+      - name: Delete truly untagged images
         uses: quartx-analytics/ghcr-cleaner@v1
         with:
           owner-type: user #org # or user
