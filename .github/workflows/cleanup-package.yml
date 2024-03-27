@@ -42,10 +42,10 @@ jobs:
           repository-owner: chiamakaobitube
           package-name: redesigned-robot
           delete-untagged: true
-          # keep-at-most: 3
+          keep-at-most: 2
           filter-tags: v*
           # dry-run: true
-          skip-tags: v2.3
+          # skip-tags: v2.3
       # - name: Delete image
       #   uses: bots-house/ghcr-delete-image-action@v1.1.0
       #   with:
