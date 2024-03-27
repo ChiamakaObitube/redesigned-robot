@@ -38,7 +38,7 @@ jobs:
         uses: quartx-analytics/ghcr-cleaner@v1
         with:
           owner-type: org # or user
-          # token: ${{ secrets.PAT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           repository_owner: ${{ github.repository_owner }}
           package-name: redesigned-robot
           delete-untagged: true
