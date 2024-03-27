@@ -39,7 +39,7 @@ jobs:
         with:
           owner-type: user #org # or user
           token: ${{ secrets.GITHUB_TOKEN }}
-          repository_owner: ${{ github.repository_owner }}
+          repository_owner: ${{ github.repository-owner }}
           package-name: redesigned-robot
           delete-untagged: true
           keep-at-most: 30
