@@ -31,7 +31,7 @@ jobs:
           package-name: 'redesigned-robot'
           package-type: 'container'
           # num-old-versions-to-delete: 3
-          delete-only-untagged-versions: true
+          # delete-only-untagged-versions: true
           # min-versions-to-keep: 0
           ignore-versions: '^(v2\.3)$'
       # - name: delete old packages
