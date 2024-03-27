@@ -25,15 +25,35 @@ jobs:
       #   if: ${{ steps.version.outputs.ids != '' }}
       #   with:
       #     package-version-ids: "${{ steps.versions.outputs.ids }}"
-      - name: Delete old images
-        uses: actions/delete-package-versions@v5
+      # - name: Delete old images
+      #   uses: actions/delete-package-versions@v5
+      #   with:
+      #     package-name: 'redesigned-robot'
+      #     package-type: 'container'
+      #     num-old-versions-to-delete: 3
+      #     # delete-only-untagged-versions: true
+      #     # min-versions-to-keep: 1
+      #     ignore-versions: '^(v2\\.3)'
+      - name: try delete package
+        uses: quartx-analytics/ghcr-cleaner@v1
         with:
-          package-name: 'redesigned-robot'
-          package-type: 'container'
-          # num-old-versions-to-delete: 3
-          # delete-only-untagged-versions: true
-          # min-versions-to-keep: 1
-          ignore-versions: '^(v2\\.3)'
+          owner-type: org # or user
+          # token: ${{ secrets.PAT_TOKEN }}
+          repository_owner: ${{ github.repository_owner }}
+          package-name: redesigned-robot
+          delete-untagged: true
+          keep-at-most: 5
+          filter-tags: v*
+          skip-tags: v2.3
+      # - name: Delete image
+      #   uses: bots-house/ghcr-delete-image-action@v1.1.0
+      #   with:
+      #     # NOTE: at now only orgs is supported
+      #     owner: ${{ github.repository_owner }}
+      #     name: some-web-service
+      #     # NOTE: using Personal Access Token
+      #     token: ${{ secrets.PAT }}
+      #     tag: base-2.19-pr${{github.event.pull_request.number}}
       # - name: delete old packages
       #   uses: smartsquaregmbh/delete-old-packages@v0.7.0
       #   with:
