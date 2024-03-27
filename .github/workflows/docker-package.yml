@@ -44,6 +44,5 @@ jobs:
           push: true
           tags: |
             ${{ steps.meta.outputs.tags }}
-            ghcr.io/chiamakaobitube/redesigned-robot:pr6025
-            ghcr.io/chiamakaobitube/redesigned-robot:pr6026
+            ghcr.io/chiamakaobitube/redesigned-robot:pr6027
           labels: ${{ steps.meta.outputs.labels }}
