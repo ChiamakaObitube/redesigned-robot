@@ -25,21 +25,42 @@ jobs:
       #   if: ${{ steps.version.outputs.ids != '' }}
       #   with:
       #     package-version-ids: "${{ steps.versions.outputs.ids }}"
-      # - name: Delete old images
-      #   uses: actions/delete-package-versions@v5
+      - name: Delete old images
+        uses: actions/delete-package-versions@v5
+        with:
+          package-name: 'redesigned-robot'
+          package-type: 'container'
+          # num-old-versions-to-delete: 2
+          ignore-versions: '^(v2\.3)$'
+      # - name: delete old packages
+      #   uses: smartsquaregmbh/delete-old-packages@v0.7.0
       #   with:
       #     package-name: 'redesigned-robot'
       #     package-type: 'container'
-      #     num-old-versions-to-delete: 2
-      #     ignore-versions: '^(1\.0.\.1)$'
-      - name: delete old packages
-        uses: smartsquaregmbh/delete-old-packages@v0.7.0
-        with:
-          organization: my-organization
-          type: container
-          dry-run: true
-          version-pattern: "^pr\\d+$"
-          names: |
-            redesigned-robot
-
-            map(select(.Address | test("^[0-9]")))
+      #     # num-old-versions-to-delete: 2
+      #     ignore-versions: '^(v2\.3)$'
+          # - name: Get Version ID from the Versions List test
+          #   id: version-id
+          #   run: |
+          #     curl -L \
+          #     -H "Accept: application/vnd.github+json" \
+          #     -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }} \
+          #     -H "X-GitHub-Api-Version: 2022-11-28" \
+          #     https://api.github.com/user/packages/container/redesigned-robot/versions | jq '.[] | select(.metadata.container.tags[] | startswith(${{ github.event.number }}))' >> containerMeta.json;
+          #     echo "VERSION_ID=$(cat containerMeta.json | jq '.id')"
+          # - name: Get Version ID from the Versions List
+          #   id: version-id
+          #   run: |
+          #     curl -L \
+          #     -H "Accept: application/vnd.github+json" \
+          #     -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }} \
+          #     -H "X-GitHub-Api-Version: 2022-11-28" \
+          #     https://api.github.com/user/packages/container/redesigned-robot/versions | jq '.[] | select(.metadata.container.tags[] | startswith("pr"))' >> containerMeta.json;
+          #     echo "VERSION_ID=$(cat containerMeta.json | jq '.id')"
+          # - name: Print Version ID
+          #   run: echo "The selected Version ID is ${{ steps.version-id.outputs.VERSION_ID }}"
+          # - uses: actions/delete-package-versions@v4
+          #   with:
+          #     package-version-ids: '${{ steps.version-id.outputs.VERSION_ID }}'
+          #     package-name: 'cardiolib'
+          #     package-type: 'container'
